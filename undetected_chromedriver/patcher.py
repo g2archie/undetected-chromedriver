@@ -301,7 +301,7 @@ class Patcher(object):
             if match_injected_codeblock:
                 target_bytes = match_injected_codeblock[0]
                 new_target_bytes = (
-                    b'{document.getElementById(' ')}'.ljust(
+                    b'{document.getElementById(" ")}'.ljust(
                         len(target_bytes), b" "
                     )
                 )
