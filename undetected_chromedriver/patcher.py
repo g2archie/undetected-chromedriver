@@ -299,7 +299,7 @@ class Patcher(object):
             # match_injected_codeblock = re.search(rb"{window.*;}", content)
             match_injected_codeblock = re.search(rb"\{window\.cdc.*?;\}", content)
             if match_injected_codeblock:
-                target_bytes = match_injected_codeblock[0]
+                target_bytes = match_injected_codeblock[1]
                 new_target_bytes = (
                     b'{document.getElementById(" ")}'.ljust(
                         len(target_bytes), b" "
